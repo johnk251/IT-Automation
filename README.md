@@ -6,3 +6,7 @@ The purpose of the batch_image_pil.py script is to perform a series of image ope
 Rotate the image 90° clockwise.
 Resize the image from 192x192 to 128x128 pixels.
 Save the modified image to a new folder in JPEG format.
+
+
+Process Text Files with Python Dictionaries and Upload to Running Web Service
+The processing_txt_upload_web.py uses the Python OS module to process a directory of text files , Manage information stored in Python dictionaries and uses the Python requests module to upload content to a running Web service.
