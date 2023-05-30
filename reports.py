@@ -1,20 +1,45 @@
 #!/usr/bin/env python3
-
+import run
 import reportlab
+import datetime
 
 from reportlab.platypus import SimpleDocTemplate
 from reportlab.platypus import Paragraph, Spacer, Table, Image
 from reportlab.lib.styles import getSampleStyleSheet
 from reportlab.lib import colors
 
-def generate(filename,title, additional_info, table_data):
-  styles = getSampleStyleSheet()
-  report = SimpleDocTemplate(filename)
-  report_title = Paragraph(title, styles["h1"])
-  report_info = Paragraph(additional_info, styles["BodyText"])
-  table_style = [('GRID', (0,0), (-1,-1), 1, colors.black),
-                ('FONTNAME', (0,0), (-1,0), 'Helvetica-Bold'),
-                ('ALIGN', (0,0), (-1,-1), 'CENTER')]
-  report_table = Table(data=table_data, style=table_style, hAlign="LEFT")
-  empty_line = Spacer(1,20)
-  report.build([report_title, empty_line, report_info, empty_line, report_table])
+#directory_path ='/supplier-data/descriptions'
+
+# Process text files in the directory
+#dict_data =run.process_directory(directory_path)
+
+
+def fruit_dict_to_table(dict_data):
+  table_data = [["name", "weight"]]
+  for item in dict_data:
+      table_data.append([item["name"], str(item["weight"]) + " lbs"])
+  return table_data
+
+
+
+
+def generate(filename, title, table_data):
+    styles = getSampleStyleSheet()
+    report = SimpleDocTemplate(filename)
+
+    report_title = Paragraph(title, styles["h1"])
+
+    empty_line = Spacer(1, 20)
+
+    elements = [report_title, empty_line]
+
+    for row in table_data:
+        name, weight = row
+        name_paragraph = Paragraph(f"name: {name}", styles["BodyText"])
+        weight_paragraph = Paragraph(f"weight: {weight}", styles["BodyText"])
+        elements.append(name_paragraph)
+        elements.append(weight_paragraph)
+        elements.append(empty_line)
+
+    report.build(elements)
+ 
