@@ -1,4 +1,5 @@
 ###Google IT Automation with python
+
 Each file represent various projects within Google IT Automation with python, ranging from working with CSV files to Regex
 
 ##Batch Image Processing with PIL
@@ -22,18 +23,18 @@ Each file represent various projects within Google IT Automation with python, ra
 
 In the final project ,
  
- **run.py** :Process the text files from the supplier-data/descriptions directory by  turn the data into a JSON dictionary
+ **run.py** :*Process the text files from the supplier-data/descriptions directory by  turn the data into a JSON dictionary
 
- **changeImage.py**:Process the supplier images by  updating  all images from  3000x2000 to 600x400 pixel resolution and  from .TIFF to .JPEG format.
+ **changeImage.py**:*Process the supplier images by  updating  all images from  3000x2000 to 600x400 pixel resolution and  from .TIFF to .JPEG format.
 
- **supplier_image_upload.py**: Takes the jpeg images from the supplier-data/images directory processed by **changeImage.py**  and uploads them to the web server fruit catalog
+ **supplier_image_upload.py**: *Takes the jpeg images from the supplier-data/images directory processed by **changeImage.py**  and uploads them to the web server fruit catalog
 
- **reports.py**: Contain methods to generate PDF report
+ **reports.py**: *Contain methods to generate PDF report
 
- **emails.py**:Contain methods to send emails
+ **emails.py**:*Contain methods to send emails
 
- **health_check.py**: Run in the background monitoring some system statistics: CPU usage, disk space, available memory and name resolution.The Python script send an email if there are problems
+ **health_check.py**: *Run in the background monitoring some system statistics: CPU usage, disk space, available memory and name resolution.The Python script send an email if there are problems
 
- **test.py**: used to test different functions
+ **test.py**: *used to test different functions
 
- **report_email.py**: Process supplier fruit description data
+ **report_email.py**: *Process supplier fruit description data
